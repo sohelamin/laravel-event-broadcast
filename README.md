@@ -19,7 +19,7 @@ Laravel event broadcasting with NodeJS, Redis &amp; Socket.io
     composer update
     ```
 
-3. Install npm and relevent packages
+3. Install npm and relevant packages
     ```
     npm install
 	npm install ioredis
@@ -37,13 +37,13 @@ Laravel event broadcasting with NodeJS, Redis &amp; Socket.io
     ```
 	redis-server
     ```
-    Note: If you've not installed redis server then run **apt-get install redis-server** or follow [this link](http://redis.io/download).
+    Note: If you've not installed redis server yet then run **apt-get install redis-server** or follow [this link](http://redis.io/download).
 3. Run socket.io file via node
     ```
 	node socket.js
     ```
 
-4. Finally you can fire or broadcast event via the url **http://localhost:8000/broadcast/** and can listen event via **http://localhost:8000/listen/**    
+4. Finally you can fire or broadcast event via this url **http://localhost:8000/broadcast/** and can listen event via **http://localhost:8000/listen/**    
 
 ##Author
 
