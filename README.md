@@ -36,16 +36,15 @@ Laravel event broadcasting with NodeJS, Redis &amp; Socket.io
 2. Run redis server
     ```
 	redis-server
-	node socket.js
     ```
-
+    Note: If you've not installed redis server then run **apt-get install redis-server** or follow [this link](http://redis.io/download).
 3. Run socket.io file via node
     ```
 	node socket.js
     ```
 
-4. Finally you can fire or broadcast event via the url **http://localhost:8000/broadcast/** and can listen event via **http://localhost:8000/broadcast**    
+4. Finally you can fire or broadcast event via the url **http://localhost:8000/broadcast/** and can listen event via **http://localhost:8000/listen/**    
 
 ##Author
 
-<a href="http://www.sohelamin.com">Sohel Amin</a>
+[Sohel Amin](http://www.sohelamin.com)
