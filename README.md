@@ -15,8 +15,7 @@ Laravel event broadcasting with NodeJS, Redis &amp; Socket.io
 
 2. Navigate to your project directory and run
     ```
-    composer require predis/predis
-    composer update
+    composer install
     ```
 
 3. Install npm and relevant packages
