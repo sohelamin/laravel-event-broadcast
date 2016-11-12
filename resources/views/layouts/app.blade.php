@@ -14,7 +14,6 @@
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="http://localhost:6001/socket.io/socket.io.js"></script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -84,6 +83,5 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    @yield('footer-script')
 </body>
 </html>
