@@ -1,29 +1,40 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
-        <link href="//fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    </head>
-    <body>
+@extends('layouts.app')
 
-        <h2>User's List</h2>
-        <ul id="user-list">
-        </ul>
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Dashboard</div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-        <script>
-            var socket = io('http://localhost:3000');
+                <div class="panel-body">
+                    You are logged in!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
 
-            socket.on("test-channel:App\\Events\\UserRegisteredEvent", function(message){
-                console.log(message);
-
-                // Appending user to user's list
-                var ul = document.getElementById("user-list");
-                var li = document.createElement("li");
-                li.appendChild(document.createTextNode(message.user));
-                ul.appendChild(li);
-
+@section('footer-script')
+    <script>
+        Echo.channel('test-channel')
+            .listen('UserRegisteredEvent', function (e) {
+                console.log(e);
             });
-        </script>
-    </body>
-</html>
+
+            console.log(Echo);
+        // var socket = io('http://localhost:3000');
+
+        // socket.on("test-channel:App\\Events\\UserRegisteredEvent", function(message){
+        //     console.log(message);
+
+        //     // Appending user to user's list
+        //     var ul = document.getElementById("user-list");
+        //     var li = document.createElement("li");
+        //     li.appendChild(document.createTextNode(message.user));
+        //     ul.appendChild(li);
+
+        // });
+    </script>
+@endsection

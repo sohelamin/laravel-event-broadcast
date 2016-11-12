@@ -2,12 +2,21 @@
 
 namespace App\Events;
 
-use App\Events\Event;
+use Illuminate\Broadcasting\Channel;
+use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Queue\SerializesModels;
 
-class UserRegisteredEvent extends Event implements ShouldBroadcast
+class UserRegisteredEvent implements ShouldBroadcast
 {
+    use InteractsWithSockets, SerializesModels;
 
+    /**
+     * User's object
+     *
+     * @var object
+     */
     public $user;
 
     /**
@@ -21,12 +30,12 @@ class UserRegisteredEvent extends Event implements ShouldBroadcast
     }
 
     /**
-     * Get the channels the event should be broadcast on.
+     * Get the channels the event should broadcast on.
      *
-     * @return array
+     * @return Channel|array
      */
     public function broadcastOn()
     {
-        return ['test-channel'];
+        return new Channel('test-channel');
     }
 }

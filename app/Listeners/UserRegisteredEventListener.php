@@ -3,6 +3,8 @@
 namespace App\Listeners;
 
 use App\Events\UserRegisteredEvent;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class UserRegisteredEventListener
 {
@@ -24,6 +26,6 @@ class UserRegisteredEventListener
      */
     public function handle(UserRegisteredEvent $event)
     {
-        var_dump("User: " . $event->user);
+        // dd($event->user);
     }
 }
